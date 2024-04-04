@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, request, jsonify, send_file
 from models.payment import Payment
 from payments.pix import Pix
 from repository.database import db
+from repository.socketio import socketio
 
 
 payment_bp = Blueprint('payment', __name__)
@@ -51,3 +52,8 @@ def payment_pix_page(payment_id):
                            host="http://127.0.0.1:5000",
                            qrcode=payment.qr_code
                            )
+
+
+@socketio.on('connect')
+def handle_connect():
+    print('Client connected to the server')
