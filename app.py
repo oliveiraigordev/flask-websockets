@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from repository.database import db
 from routes.payment import payment_bp
 from models.payment import Payment
