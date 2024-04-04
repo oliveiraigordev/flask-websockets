@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from repository.database import db
-from routes.payments import payment_bp
+from routes.payment import payment_bp
 from models.payment import Payment
 
 
